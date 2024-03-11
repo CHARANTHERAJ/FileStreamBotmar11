@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Telegram:
-    API_ID = int(env.get("API_ID"))
-    API_HASH = str(env.get("API_HASH"))
-    BOT_TOKEN = str(env.get("BOT_TOKEN"))
-    OWNER_ID = int(env.get('OWNER_ID', '7978482443'))
+    API_ID = int(env.get("API_ID", "23089557"))
+    API_HASH = str(env.get("API_HASH", "4a98e047ba5b456892b5043107c0a61f"))
+    BOT_TOKEN = str(env.get("BOT_TOKEN","7192673111:AAH7ChqbKQ9l4ul9W8I9SlZOexx5HvMtH1c"))
+    OWNER_ID = int(env.get('OWNER_ID', '5480645152'))
     WORKERS = int(env.get("WORKERS", "6"))  # 6 workers = 6 commands at once
-    DATABASE_URL = str(env.get('DATABASE_URL'))
+    DATABASE_URL = str(env.get('DATABASE_URL','mongodb+srv://charanrajkendyala1177:Pubg1838@cluster0.k5rmybi.mongodb.net/?'))
     UPDATES_CHANNEL = str(env.get('UPDATES_CHANNEL', "Telegram"))
     SESSION_NAME = str(env.get('SESSION_NAME', 'FileStream'))
     FORCE_SUB_ID = env.get('FORCE_SUB_ID', None)
@@ -20,8 +20,8 @@ class Telegram:
     START_PIC = env.get('START_PIC', "https://graph.org/file/290af25276fa34fa8f0aa.jpg")
     VERIFY_PIC = env.get('VERIFY_PIC', "https://graph.org/file/736e21cc0efa4d8c2a0e4.jpg")
     MULTI_CLIENT = False
-    FLOG_CHANNEL = int(env.get("FLOG_CHANNEL", None))   # Logs channel for file logs
-    ULOG_CHANNEL = int(env.get("ULOG_CHANNEL", None))   # Logs channel for user logs
+    FLOG_CHANNEL = int(env.get("FLOG_CHANNEL", "-1002008101396"))   # Logs channel for file logs
+    ULOG_CHANNEL = int(env.get("ULOG_CHANNEL", "-1002008101396"))   # Logs channel for user logs
     MODE = env.get("MODE", "primary")
     SECONDARY = True if MODE.lower() == "secondary" else False
     AUTH_USERS = list(set(int(x) for x in str(env.get("AUTH_USERS", "")).split()))
